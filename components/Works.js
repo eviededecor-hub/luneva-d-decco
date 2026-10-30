@@ -8,6 +8,8 @@ export default function Works() {
   const [active, setActive] = useState("All");
   const [open, setOpen] = useState(null);
   const list = active === "All" ? works : works.filter((w) => w.cat === active);
+  // tampilkan hanya kategori yang punya karya
+  const cats = categories.filter((c) => c === "All" || works.some((w) => w.cat === c));
 
   return (
     <section id="portfolio" className="bg-night py-20 text-ivory md:py-28">
@@ -28,9 +30,10 @@ export default function Works() {
         </div>
 
         {/* Filter kategori */}
+        {cats.length > 2 && (
         <div className="-mx-5 mt-8 overflow-x-auto px-5 md:mx-0 md:px-0" role="tablist" aria-label="Kategori portofolio">
           <ul className="flex w-max gap-7">
-            {categories.map((c) => (
+            {cats.map((c) => (
               <li key={c}>
                 <button
                   type="button"
@@ -47,8 +50,9 @@ export default function Works() {
             ))}
           </ul>
         </div>
+        )}
 
-        <div key={active} className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-x-6 md:gap-y-14">
+        <div key={active} className={`mt-10 grid ${list.length === 1 ? "mx-auto max-w-[320px] grid-cols-1" : "grid-cols-2"} gap-x-4 gap-y-10 md:grid-cols-[repeat(auto-fit,minmax(0,300px))] md:justify-center md:gap-x-6 md:gap-y-14`}>
           {list.map((w, i) => (
             <article key={w.title} className="group" style={{ animation: `fadeUp 900ms cubic-bezier(0.22,1,0.36,1) ${i * 70}ms both` }}>
               <div
