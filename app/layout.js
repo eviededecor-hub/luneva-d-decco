@@ -1,8 +1,8 @@
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["300", "400", "500"], style: ["normal", "italic"], variable: "--font-serif" });
-const sans = Inter({ subsets: ["latin"], weight: ["300", "400", "500"], variable: "--font-sans" });
+const sans = Montserrat({ subsets: ["latin"], weight: ["300", "400", "500"], variable: "--font-sans" });
 
 export const metadata = {
   title: "Lunéva D Deco — Wedding Decoration & Styling, Lampung",

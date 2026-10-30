@@ -12,9 +12,11 @@ Untuk online: unggah folder ini ke GitHub lalu import di vercel.com (gratis).
 ## Mengubah isi
 Semua teks, kontak, dan foto ada di `lib/data.js`:
 - `site` — nama merek, email, nomor WhatsApp, handle Instagram
-- `heroSlides` — 3 foto besar di bagian atas
-- `works` — kartu portofolio (judul, kategori, tahun, foto)
-- `analog` — foto film di bagian Analog Series
+- `heroSlides` — 3 foto besar di bagian atas (berganti otomatis)
+- `works` — kartu Selected Works (judul, kategori, lokasi, foto)
+- `services` — daftar layanan
+- `process` — 4 langkah proses kerja
+- `quote` — kutipan dan foto di samping proses
 
 Foto saat ini adalah placeholder dari Unsplash. Ganti dengan foto karya sendiri:
 taruh file di folder `public/` (misal `public/works/nadia.jpg`) lalu tulis `src: "/works/nadia.jpg"`.
