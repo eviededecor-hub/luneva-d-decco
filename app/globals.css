@@ -5,8 +5,8 @@
 html { scroll-behavior: smooth; }
 body { @apply bg-ivory text-ink font-sans antialiased; }
 h1, h2, h3 { text-wrap: balance; }
-::selection { background: #E4D9C8; color: #1A1816; }
-:focus-visible { outline: 1px solid #B08D5B; outline-offset: 4px; }
+::selection { background: #111111; color: #FFFFFF; }
+:focus-visible { outline: 1px solid #111111; outline-offset: 4px; }
 
 /* label kecil huruf kapital berjarak */
 .eyebrow { @apply font-sans text-[11px] font-normal uppercase tracking-[0.32em]; }

@@ -17,6 +17,8 @@ export default function Header() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  const light = !scrolled && !open; // teks putih di atas latar gelap halaman pembuka
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ease-soft ${
@@ -24,18 +26,18 @@ export default function Header() {
       }`}
     >
       <div className={`mx-auto flex max-w-[1440px] items-center justify-between px-5 transition-all duration-500 md:px-12 ${scrolled ? "h-16" : "h-20"}`}>
-        <a href="#home" className="flex items-baseline gap-2 text-ink">
-          <span className="font-serif text-xl tracking-[0.2em]">{site.brand}</span>
-          <span className="font-serif text-sm italic text-golddeep">{site.brandSub}</span>
+        <a href="#home" className={`flex items-baseline gap-2 transition-colors ${light ? "text-ivory" : "text-ink"}`}>
+          <span className="text-lg font-medium tracking-[0.22em]">{site.brand}</span>
+          <span className="text-[10px] uppercase tracking-[0.3em] opacity-70">{site.brandSub}</span>
         </a>
 
         <nav className="hidden md:block" aria-label="Utama">
           <ul className="flex items-center gap-10">
             {nav.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className="group relative text-[11px] uppercase tracking-[0.24em] text-ink/70 transition-colors hover:text-ink">
+                <a href={n.href} className={`group relative text-[11px] uppercase tracking-[0.24em] transition-colors ${light ? "text-ivory/80 hover:text-ivory" : "text-ink/70 hover:text-ink"}`}>
                   {n.label}
-                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-500 ease-soft group-hover:w-full" />
+                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-current transition-all duration-500 ease-soft group-hover:w-full" />
                 </a>
               </li>
             ))}
@@ -47,7 +49,7 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "Tutup menu" : "Buka menu"}
-          className="relative h-10 w-10 text-ink md:hidden"
+          className={`relative h-10 w-10 md:hidden ${light ? "text-ivory" : "text-ink"}`}
         >
           <span className={`absolute left-2 right-2 h-px bg-current transition-all duration-500 ease-soft ${open ? "top-1/2 rotate-45" : "top-[15px]"}`} />
           <span className={`absolute left-2 right-2 h-px bg-current transition-all duration-500 ease-soft ${open ? "top-1/2 -rotate-45" : "top-[24px]"}`} />
