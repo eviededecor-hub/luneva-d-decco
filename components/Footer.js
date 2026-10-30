@@ -34,7 +34,19 @@ export default function Footer() {
             <ul className="mt-6 flex flex-col gap-3 text-[13px] font-light text-ivory/80">
               <li><a href={`mailto:${site.email}`} className="transition-colors hover:text-ivory">{site.email}</a></li>
               <li><a href={wa} target="_blank" rel="noreferrer" className="transition-colors hover:text-ivory">{site.whatsappLabel}</a></li>
-              <li>Based in {site.city}</li>
+              <li>
+                <a href={site.maps} target="_blank" rel="noreferrer" className="group inline-flex items-start gap-2 transition-colors hover:text-ivory">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="mt-0.5 shrink-0" aria-hidden="true">
+                    <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" /><circle cx="12" cy="9.5" r="2.5" />
+                  </svg>
+                  <span>
+                    Based in {site.city}
+                    <span className="mt-1 block text-[10px] uppercase tracking-[0.24em] text-goldlight">
+                      Open in Google Maps <span className="inline-block transition-transform duration-500 group-hover:translate-x-1">→</span>
+                    </span>
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
 
