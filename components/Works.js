@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
 import SafeImage from "./SafeImage";
+import AlbumViewer from "./AlbumViewer";
 import { categories, site, works } from "@/lib/data";
 
 export default function Works() {
   const [active, setActive] = useState("All");
+  const [open, setOpen] = useState(null);
   const list = active === "All" ? works : works.filter((w) => w.cat === active);
 
   return (
@@ -49,7 +51,16 @@ export default function Works() {
         <div key={active} className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-x-6 md:gap-y-14">
           {list.map((w, i) => (
             <article key={w.title} className="group" style={{ animation: `fadeUp 900ms cubic-bezier(0.22,1,0.36,1) ${i * 70}ms both` }}>
-              <div className="relative aspect-[3/4] overflow-hidden border border-ivory/15 bg-[#26231f]">
+              <div
+                className={`relative aspect-[3/4] overflow-hidden border border-ivory/15 bg-[#26231f] ${w.album ? "cursor-pointer" : ""}`}
+                {...(w.album && {
+                  role: "button",
+                  tabIndex: 0,
+                  "aria-label": `Buka album ${w.title}`,
+                  onClick: () => setOpen(w),
+                  onKeyDown: (e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), setOpen(w)),
+                })}
+              >
                 <SafeImage
                   src={w.src}
                   alt={`${w.title} — ${w.cat}, ${w.place}`}
@@ -58,6 +69,16 @@ export default function Works() {
                   className="object-cover transition-transform duration-[1400ms] ease-soft group-hover:scale-[1.06]"
                 />
                 <div className="absolute inset-0 bg-night/0 transition-colors duration-700 group-hover:bg-night/30" />
+                {w.album && (
+                  <>
+                    <span className="absolute left-3 top-3 bg-night/70 px-2.5 py-1 text-[9px] uppercase tracking-[0.24em] text-ivory backdrop-blur-sm">
+                      Album · {w.album.length}
+                    </span>
+                    <span className="absolute inset-x-0 bottom-4 text-center text-[10px] uppercase tracking-[0.28em] text-ivory opacity-100 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100">
+                      View album →
+                    </span>
+                  </>
+                )}
               </div>
               <div className="mt-5 text-center">
                 <h3 className="text-[12px] font-normal uppercase tracking-[0.24em] text-ivory md:text-[13px]">{w.title}</h3>
@@ -68,6 +89,7 @@ export default function Works() {
           ))}
         </div>
       </div>
+      {open && <AlbumViewer work={open} onClose={() => setOpen(null)} />}
     </section>
   );
 }
