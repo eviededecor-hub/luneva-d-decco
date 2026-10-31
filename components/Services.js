@@ -42,7 +42,7 @@ export default function Services() {
 
         {/* Kutipan dengan foto */}
         <figure className="relative min-h-[420px] overflow-hidden bg-sand md:col-span-5">
-          <SafeImage src={quote.src} alt="Detail dekorasi bunga" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover grayscale" />
+          <SafeImage src={quote.src} alt="Detail dekorasi bunga" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           <blockquote className="absolute inset-x-0 bottom-0 flex gap-4 p-7 md:p-10">
             <span className="font-serif text-6xl leading-[0.6] text-goldlight" aria-hidden="true">“</span>

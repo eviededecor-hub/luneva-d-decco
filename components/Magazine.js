@@ -18,9 +18,8 @@ export default function Magazine({
   footer = null,
 }) {
   const wordSize = Math.min(21, 90 / (word.length * 0.64)); // kata panjang otomatis mengecil
-  const tone = hoverColor
-    ? "grayscale transition-[filter,transform] duration-[1200ms] ease-soft group-hover:grayscale-0"
-    : "grayscale";
+  // Foto tampil berwarna; di kartu portofolio foto sedikit membesar saat disorot
+  const tone = hoverColor ? "transition-transform duration-[1200ms] ease-soft group-hover:scale-[1.04]" : "";
 
   return (
     <div className="h-full bg-ivory text-ink shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]" style={{ containerType: "inline-size" }}>

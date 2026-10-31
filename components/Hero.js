@@ -5,9 +5,9 @@ import { hero } from "@/lib/data";
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-night pb-10 pt-24 md:pb-14 md:pt-32">
-      {/* Latar: foto sampul yang diburamkan, hitam-putih */}
+      {/* Latar: foto sampul yang diburamkan */}
       <div aria-hidden="true" className="absolute inset-0">
-        <SafeImage src={hero.src} alt="" fill sizes="100vw" className="scale-110 object-cover opacity-60 blur-[6px] brightness-75 grayscale" />
+        <SafeImage src={hero.src} alt="" fill sizes="100vw" className="scale-110 object-cover opacity-60 blur-[6px] brightness-75" />
       </div>
 
       <div className="relative mx-auto max-w-[940px] px-5">
