@@ -4,11 +4,11 @@ import { process, quote, services } from "@/lib/data";
 
 export default function Services() {
   return (
-    <section className="bg-ivory py-20 md:py-28">
-      <div className="mx-auto grid max-w-[1440px] gap-16 px-5 md:grid-cols-12 md:gap-8 md:px-12">
+    <section className="panel py-16 md:py-24">
+      <div className="grid gap-16 px-5 md:grid-cols-12 md:gap-8 md:px-12">
         {/* Layanan */}
         <div id="services" className="scroll-mt-24 md:col-span-3">
-          <h2 className="eyebrow text-golddeep">Services</h2>
+          <h2 className="font-serif text-[34px] uppercase leading-none text-wine md:text-[40px]">Services</h2>
           <ul className="mt-10 flex flex-col gap-9">
             {services.map((s) => (
               <li key={s.title} className="flex gap-4">
@@ -24,7 +24,7 @@ export default function Services() {
 
         {/* Proses kerja */}
         <div id="process" className="scroll-mt-24 md:col-span-4">
-          <h2 className="eyebrow text-golddeep">Our Process</h2>
+          <h2 className="font-serif text-[34px] uppercase leading-none text-wine md:text-[40px]">Our <span className="font-script normal-case">process</span></h2>
           <ol className="relative mt-10 flex flex-col gap-9 pl-8">
             <span className="absolute bottom-2 left-[5px] top-2 w-px bg-gold/40" aria-hidden="true" />
             {process.map((p, i) => (

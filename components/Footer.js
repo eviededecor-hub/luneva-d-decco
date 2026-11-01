@@ -7,7 +7,7 @@ export default function Footer() {
   )}`;
 
   return (
-    <footer id="contact" className="bg-night text-ivory">
+    <footer id="contact" className="scroll-mt-28 bg-night text-ivory">
       <div className="mx-auto max-w-[1440px] px-5 pb-10 pt-20 md:px-12 md:pt-24">
         <div className="grid gap-12 md:grid-cols-12 md:gap-8">
           {/* Pesan penutup + tombol */}
