@@ -1,9 +1,8 @@
 import SafeImage from "./SafeImage";
-import { editorial, site } from "@/lib/data";
+import { editorial } from "@/lib/data";
 
 export default function Experience() {
   const e = editorial.experience;
-  const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Halo ${site.brand} ${site.brandSub}, saya ingin bertanya tentang dekorasi pernikahan.`)}`;
 
   return (
     <section id="experience" className="panel scroll-mt-28 overflow-hidden px-5 py-14 md:px-12 md:py-20">
@@ -38,7 +37,7 @@ export default function Experience() {
         <div className="flex flex-col justify-end gap-5 md:col-span-5 md:col-start-8 md:pb-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink">{e.kicker}</p>
           <p className="max-w-[46ch] text-[14px] font-light leading-relaxed text-ink/80">{e.text}</p>
-          <a href={wa} target="_blank" rel="noreferrer" className="btn-box mt-2 w-fit">
+          <a href="/konsultasi" className="btn-box mt-2 w-fit">
             Inquire now
           </a>
         </div>

@@ -18,12 +18,10 @@ export default function Footer() {
             </h2>
             <Star className="h-4 w-4 text-goldlight" />
             <a
-              href={wa}
-              target="_blank"
-              rel="noreferrer"
+              href="/konsultasi"
               className="group mt-2 inline-flex w-fit items-center gap-3 border border-goldlight px-7 py-3.5 text-[11px] uppercase tracking-[0.24em] text-goldlight transition-colors duration-500 hover:bg-goldlight hover:text-night"
             >
-              Chat on WhatsApp
+              Konsultasi
               <span className="transition-transform duration-500 ease-soft group-hover:translate-x-1">→</span>
             </a>
           </div>
